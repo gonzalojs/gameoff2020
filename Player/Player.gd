@@ -8,7 +8,6 @@ var vel := Vector2(0, 0)
 func _physics_process(delta: float) -> void:
 	inputs(delta)
 
-	
 	# Make sure we are in  the screen
 	var viewRect := get_viewport_rect()
 	position.x = clamp(position.x, 0, viewRect.size.x)
