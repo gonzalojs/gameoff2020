@@ -12,14 +12,6 @@ var vel := Vector2(0, 0)
 
 func _physics_process(delta: float) -> void:
 	inputs(delta)
-	
-	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
-		fireDelayTimer.start(fireDelay)
-		
-		for child in firingPositions.get_children():
-			var bullet := plBullet.instance()
-			bullet.global_position = child.global_position
-			get_tree().current_scene.add_child(bullet)
 
 	# Make sure we are in  the screen
 	var viewRect := get_viewport_rect()
@@ -28,6 +20,12 @@ func _physics_process(delta: float) -> void:
 
 func inputs(delta: float):
 	var dirVec := Vector2(0, 0)
+	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
+		fireDelayTimer.start(fireDelay)
+		for child in firingPositions.get_children():
+			var bullet := plBullet.instance()
+			bullet.global_position = child.global_position
+			get_tree().current_scene.add_child(bullet)
 	
 	dirVec.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	dirVec.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
