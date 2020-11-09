@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Moon.png" type="Texture" id=1]
+
+[node name="MoonEarth" type="KinematicBody2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Moon" type="Sprite" parent="Node2D"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 2, 2, 71, 72 )
+
+[node name="LeftEye" type="Sprite" parent="Node2D/Moon"]
+position = Vector2( -10.2531, -12.3744 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 95, 19, 15, 14 )
+
+[node name="LeftIris" type="Sprite" parent="Node2D/Moon/LeftEye"]
+position = Vector2( -0.445953, 1.93246 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 98, 5, 5, 5 )
+
+[node name="RightEye" type="Sprite" parent="Node2D/Moon"]
+position = Vector2( 10.4298, -12.1976 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 120, 19, 15, 14 )
+
+[node name="RightIris" type="Sprite" parent="Node2D/Moon/RightEye"]
+position = Vector2( -0.169052, 2.05298 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 114, 5, 5, 5 )
+
+[node name="Mouth" type="Sprite" parent="Node2D/Moon"]
+position = Vector2( -0.353546, 12.3744 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 90, 37, 53, 22 )
